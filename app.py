@@ -4,6 +4,10 @@ from typing import Dict
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return f"<h1>Test App Launched</h1>"
+
 @app.route("/dummy/train")
 def train():
     pass
