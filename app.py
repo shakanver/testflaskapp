@@ -23,10 +23,11 @@ def purge():
 @app.route("/dummy/logs",methods=["POST"])
 def logs():
     content = _parse_flask_request(request)
+    result = {"Outcome":"Success"}
     if content["password"]  != "kusef1nderm1ndr":
-        {"Outcome":"Fail"}
+        result =  {"Outcome":"Fail"}
 
-    return {"Outcome":"Success"}
+    return result
 
 def _parse_flask_request(req: request) -> Dict:
     content = ast.literal_eval(req.get_data().decode("UTF-8"))
