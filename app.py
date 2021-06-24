@@ -23,7 +23,7 @@ def purge():
 @app.route("/dummy/logs",methods=["POST"])
 def logs():
     content = _parse_flask_request(request)
-    if request["password"]  != "kusef1nderm1ndr":
+    if content["password"]  != "kusef1nderm1ndr":
         {"Outcome":"Fail"}
 
     return {"Outcome":"Success"}
