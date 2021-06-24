@@ -20,7 +20,7 @@ def predict():
 def purge():
     pass
 
-@app.route("/dummy/logs")
+@app.route("/dummy/logs",methods=["POST"])
 def logs():
     content = _parse_flask_request(request)
     if request["password"]  != "kusef1nderm1ndr":
