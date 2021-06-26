@@ -8,11 +8,11 @@ app = Flask(__name__)
 def index():
     return f"<h1>Test App Launched</h1>"
 
-@app.route("/dummy/train")
+@app.route("/dummy/train",methods=["POST"])
 def train():
     pass
 
-@app.route("/dummy/predict")
+@app.route("/dummy/predict",methods=["POST"])
 def predict():
     content = _parse_flask_request(request)
     result = {"Outcome":"Success"}
@@ -21,7 +21,7 @@ def predict():
 
     return result  
 
-@app.route("/dummy/purge")
+@app.route("/dummy/purge",methods=["DELETE"])
 def purge():
     pass
 
