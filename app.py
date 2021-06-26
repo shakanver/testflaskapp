@@ -10,7 +10,12 @@ def index():
 
 @app.route("/dummy/train",methods=["POST"])
 def train():
-    pass
+    content = _parse_flask_request(request)
+    result = {"Outcome":"Success"}
+    if content["password"]  != "kusef1nderm1ndr":
+        result =  {"Outcome":"Fail","Error":"prediction failed"}
+
+    return result  
 
 @app.route("/dummy/predict",methods=["POST"])
 def predict():
