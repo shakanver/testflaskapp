@@ -13,7 +13,7 @@ def train():
     content = _parse_flask_request(request)
     result = {"Outcome":"Success"}
     if content["password"]  != "kusef1nderm1ndr":
-        result =  {"Outcome":"Fail","Error":"prediction failed"}
+        result =  {"Outcome":"Fail","Error":"training failed"}
 
     return result  
 
