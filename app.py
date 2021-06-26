@@ -14,7 +14,12 @@ def train():
 
 @app.route("/dummy/predict")
 def predict():
-    pass
+    content = _parse_flask_request(request)
+    result = {"Outcome":"Success"}
+    if content["password"]  != "kusef1nderm1ndr":
+        result =  {"Outcome":"Fail","Error":"prediction failed"}
+
+    return result  
 
 @app.route("/dummy/purge")
 def purge():
