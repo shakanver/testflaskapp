@@ -29,7 +29,7 @@ def predict():
 @app.route("/dummy/purge",methods=["DELETE"])
 def purge():
     content = _parse_flask_request(request)
-    result = {"Outcome":f"content received: {content}"}
+    result = {"Outcome":f"content received: {content} type: {type(content)}"}
     if content["password"]  != "kusef1nderm1ndr":
         result =  {"Outcome":"Fail","Error":"prediction failed"}
 
